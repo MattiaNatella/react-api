@@ -44,14 +44,14 @@ const Main = () => {
         e.preventDefault();
         console.log(formData)
 
-        const newPost = { ...FormData }
+        const newPost = { ...formData }
 
 
         //chiamata in POST all'API inviando il nuovo elemento
         axios.post(`${baseApi}/posts`, newPost)
             .then(res => {
                 //aggiorno lo stato in base alla response del server
-                setPosts(res.data);
+                setPosts([res.data, ...posts]);
                 //resetto il form
                 // setFormData(defaultFormData)
             })
