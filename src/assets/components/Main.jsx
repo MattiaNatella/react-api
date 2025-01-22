@@ -55,7 +55,6 @@ const Main = () => {
                 //resetto il form
                 // setFormData(defaultFormData)
             })
-
     }
 
     const fetchPosts = () => {
