@@ -10,11 +10,20 @@ const Main = () => {
     const fetchPosts = () => {
         axios.get(`${baseApi}/posts`)
             .then(res => {
+                console.log(res.data)
                 setPosts(res.data)
             })
             .catch(error => {
                 console.error('Errore durante il caricamento delle pizze:', error)
             })
+    }
+
+    const handlerDeletePost = (id) => {
+        console.log(id)
+        // axios.delete(`${baseApi}/posts/${id}`)
+        //     .then(res => {
+        //         setPosts(res.data)
+        //     })
     }
 
     useEffect(() => {
@@ -28,7 +37,7 @@ const Main = () => {
                 <h1 className="text-center">Elenco post</h1>
                 <div className="row text-center">
                     {posts.map(post => (
-                        <PostCard key={post.id} post={post} />
+                        <PostCard key={post.id} post={post} onDelete={() => handlerDeletePost(post.id)} />
                     ))}
 
                 </div>

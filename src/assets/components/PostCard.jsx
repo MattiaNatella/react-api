@@ -5,7 +5,7 @@ const PostCard = (props) => {
     return (
         <div className="col-12 my-2">
             <div className="card border border-success">
-                <img src='https://placehold.co/100x50' className="card-img-top" alt={title} />
+                <img src={image} className="card-img-top" alt={title} />
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text text-start">{content}</p>
