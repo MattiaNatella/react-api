@@ -39,12 +39,39 @@ const Main = () => {
         })
     }
 
+    const handlerChangeTags = (e) => {
+
+        console.log(e.target)
+        console.log(e.target.value)
+
+
+        //     // let { tags, ...others } = formData
+
+        //     // // se è già presente lo escludo dalla lista filtrando per se stesso
+        //     // //  if (tags.includes(e.target.value)) {
+        //     // //      tags = tags.filter(tag => tag !== e.target.value)
+        //     // //  } else {
+        //     // //      tags = [...tags, e.target.value]
+        //     // //  }
+
+        //     // setFormData({
+        //     //     tags,
+        //     //     ...others
+        //     // })
+
+    }
+
     const handlerAddPost = (e) => {
 
         e.preventDefault();
         console.log(formData)
 
-        const newPost = { ...formData }
+        const tagsArray = formData.tags.split(', ').map(tag => tag.trim())
+        console.log(tagsArray)
+
+        const newPost = { ...formData, tags: tagsArray }
+
+        console.log(newPost)
 
 
         //chiamata in POST all'API inviando il nuovo elemento
@@ -53,7 +80,7 @@ const Main = () => {
                 //aggiorno lo stato in base alla response del server
                 setPosts([res.data, ...posts]);
                 //resetto il form
-                // setFormData(defaultFormData)
+                setFormData(defaultFormData)
             })
     }
 
@@ -76,7 +103,7 @@ const Main = () => {
     return (
         <main>
             <div className="container">
-                <FormBlog handlerChange={handlerChange} handlerAddPost={handlerAddPost} formData={formData} />
+                <FormBlog handlerChange={handlerChange} handlerChangeTags={handlerChangeTags} handlerAddPost={handlerAddPost} formData={formData} />
             </div>
             <div className="container border border-primary rounded my-5">
                 <h1 className="text-center">Elenco post</h1>

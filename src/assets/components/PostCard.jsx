@@ -8,7 +8,7 @@ const PostCard = (props) => {
     return (
         <div className="col-12 col-md-6 col-lg-4 my-2">
             <div className="card border border-danger-subtle">
-                <img src={image} className="card-img-top" alt={title} />
+                <img src={image} className="card-img-top" alt={image} />
                 <div className="card-body">
                     <h5 className="card-title">{title} {authorize ? <span className="badge text-bg-success">Pubblicato</span> : <span className="badge text-bg-warning">Bozza</span>}</h5>
                     {/* CONTENUTO POST */}

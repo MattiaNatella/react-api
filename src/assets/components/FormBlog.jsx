@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 const FormBlog = (props) => {
 
-    let { formData, handlerChange, handlerAddPost } = props
+    let { formData, handlerChange, handlerAddPost, handlerChangeTags } = props
 
     //**React Blog Form Multifield**
 
@@ -24,23 +24,7 @@ const FormBlog = (props) => {
     //     { id: 5, name: 'sun' }
     // ]
 
-    // const handlerChangeTags = (e) => {
 
-    //     let { tags, ...others } = formData
-
-    //     //se è già presente lo escludo dalla lista filtrando per se stesso
-    //     if (tags.includes(e.target.value)) {
-    //         tags = tags.filter(tag => tag !== e.target.value)
-    //     } else {
-    //         tags = [...tags, e.target.value]
-    //     }
-
-    //     setFormData({
-    //         tags,
-    //         ...others
-    //     })
-
-    // }
 
     useEffect(() => {
 
@@ -102,19 +86,20 @@ const FormBlog = (props) => {
 
 
                         </select>*/}
-                            {/* TAGS (LISTA CHECKBOX) */}
-                            {/* <h2>TAGS</h2>
-                        <ul className="list-group text-center">
-                            {arrayTags.map(tag => (
-                                <li key={tag.id} className="list-group-item">
-                                    <input className="form-check-input me-1"
-                                        type="checkbox"
-                                        value={tag.name}
-                                        onChange={handlerChangeTags} />
-                                    <label className="form-check-label" >{tag.name}</label>
-                                </li>
-                            ))}
-                        </ul> */}
+                            {/*TAGS*/}
+                            <h2>TAGS</h2>
+
+                            <div className="input-group">
+                                <input
+                                    type="text"
+                                    placeholder="Inserisci i tags separati da ,"
+                                    className="form-control"
+                                    name="tags"
+                                    value={formData.tags}
+                                    onChange={handlerChange}
+                                />
+                            </div>
+
                             {/* STATO PUBBLICAZIONE */}
                             <div className="form-check form-switch text-start">
                                 <input
