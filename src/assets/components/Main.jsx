@@ -5,7 +5,6 @@ import axios from "axios"
 
 const Main = () => {
 
-
     const defaultFormData = {
         title: '',
         image: '',
@@ -17,7 +16,6 @@ const Main = () => {
     const baseApi = 'http://localhost:3000'
     const [posts, setPosts] = useState([])
     const [formData, setFormData] = useState(defaultFormData)
-
 
     const handlerDeletePost = (id) => {
 
@@ -37,28 +35,6 @@ const Main = () => {
             ...formData,
             [name]: value
         })
-    }
-
-    const handlerChangeTags = (e) => {
-
-        console.log(e.target)
-        console.log(e.target.value)
-
-
-        //     // let { tags, ...others } = formData
-
-        //     // // se è già presente lo escludo dalla lista filtrando per se stesso
-        //     // //  if (tags.includes(e.target.value)) {
-        //     // //      tags = tags.filter(tag => tag !== e.target.value)
-        //     // //  } else {
-        //     // //      tags = [...tags, e.target.value]
-        //     // //  }
-
-        //     // setFormData({
-        //     //     tags,
-        //     //     ...others
-        //     // })
-
     }
 
     const handlerAddPost = (e) => {
