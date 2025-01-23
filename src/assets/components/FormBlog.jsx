@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 
 const FormBlog = (props) => {
 
-    let { formData, handlerChange, handlerAddPost, handlerChangeTags } = props
+    let { formData, handlerChange, handlerAddPost } = props
 
     useEffect(() => {
 
@@ -66,7 +66,7 @@ const FormBlog = (props) => {
                                     className="form-control"
                                     name="tags"
                                     value={formData.tags}
-                                    onChange={handlerChangeTags}
+                                    onChange={handlerChange}
                                 />
                             </div>
 

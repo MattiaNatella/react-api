@@ -37,6 +37,7 @@ const Main = () => {
         })
     }
 
+
     const handlerAddPost = (e) => {
 
         e.preventDefault();
@@ -79,7 +80,7 @@ const Main = () => {
     return (
         <main>
             <div className="container">
-                <FormBlog handlerChange={handlerChange} handlerChangeTags={handlerChangeTags} handlerAddPost={handlerAddPost} formData={formData} />
+                <FormBlog handlerChange={handlerChange} handlerAddPost={handlerAddPost} formData={formData} />
             </div>
             <div className="container border border-primary rounded my-5">
                 <h1 className="text-center">Elenco post</h1>
